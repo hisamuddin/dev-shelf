@@ -1,0 +1,38 @@
+openapi: 3.0.3
+info:
+  title: DevShelf API
+  version: 0.1.0
+  description: Same-day MVP API for the DevShelf resource library.
+servers:
+  - url: http://localhost:5000/api/v1
+paths:
+  /resources:
+    get:
+      summary: Search and filter published resources
+      parameters:
+        - { name: q, in: query, schema: { type: string } }
+        - { name: category, in: query, schema: { type: string } }
+        - { name: difficulty, in: query, schema: { type: string } }
+      responses:
+        '200': { description: Resource page }
+  /resources/{slug}:
+    get:
+      summary: Get a published resource
+      parameters: [{ name: slug, in: path, required: true, schema: { type: string } }]
+      responses:
+        '200': { description: Resource detail }
+        '404': { description: Not found }
+  /auth/login:
+    post:
+      summary: Create a demo access token
+      requestBody: { required: true, content: { application/json: { schema: { type: object } } } }
+      responses: { '200': { description: Authenticated user } }
+  /bookmarks/{resourceId}:
+    post:
+      summary: Toggle a bookmark
+      security: [{ bearerAuth: [] }]
+      parameters: [{ name: resourceId, in: path, required: true, schema: { type: string } }]
+      responses: { '200': { description: Bookmark state } }
+components:
+  securitySchemes:
+    bearerAuth: { type: http, scheme: bearer, bearerFormat: JWT }

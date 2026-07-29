@@ -1,0 +1,8 @@
+{
+  "info": { "name": "DevShelf MVP", "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json" },
+  "variable": [{ "key": "baseUrl", "value": "http://localhost:5000/api/v1" }],
+  "item": [
+    { "name": "Explore resources", "request": { "method": "GET", "url": "{{baseUrl}}/resources?q=React" } },
+    { "name": "Login demo admin", "request": { "method": "POST", "header": [{ "key": "Content-Type", "value": "application/json" }], "body": { "mode": "raw", "raw": "{\"email\":\"admin@devshelf.dev\",\"password\":\"DevShelf123!\"}" }, "url": "{{baseUrl}}/auth/login" } }
+  ]
+}
