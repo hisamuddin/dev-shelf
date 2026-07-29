@@ -6,22 +6,22 @@ DevShelf is a modular-monolith developer-resource library. The current repositor
 
 ## Detected technology
 
-| Concern | Evidence |
-| --- | --- |
-| Languages | JavaScript, JSX, JSON, YAML, Markdown |
-| Frontend | React 18, Vite, React Router, Axios, React Markdown, Lucide React |
-| Backend | Node.js 20 runtime, Express 4 |
-| Package manager | npm workspaces with `package-lock.json` |
-| Database target | MongoDB with Mongoose models; current runtime uses an in-memory demo store |
-| Cache | Custom process-local `MemoryCache` |
-| Containers | Dockerfiles for client/server and `docker-compose.yml` with MongoDB |
-| Test framework | Node built-in test runner is configured; no test files exist yet |
-| Lint/format tools | No ESLint or Prettier scripts detected |
-| CI | `.github/workflows/ci.yml` plus separated build/test/security workflows |
+| Concern           | Evidence                                                                   |
+| ----------------- | -------------------------------------------------------------------------- |
+| Languages         | JavaScript, JSX, JSON, YAML, Markdown                                      |
+| Frontend          | React 19, Vite 8, React Router, Axios, React Markdown, Lucide React        |
+| Backend           | Node.js 22.12+ runtime, Express 5                                          |
+| Package manager   | npm workspaces with `package-lock.json`                                    |
+| Database target   | MongoDB with Mongoose models; current runtime uses an in-memory demo store |
+| Cache             | Custom process-local `MemoryCache`                                         |
+| Containers        | Dockerfiles for client/server and `docker-compose.yml` with MongoDB        |
+| Test framework    | Node built-in test runner is configured; no test files exist yet           |
+| Lint/format tools | No ESLint or Prettier scripts detected                                     |
+| CI                | `.github/workflows/ci.yml` plus separated build/test/security workflows    |
 
 ## Runtime versions and commands
 
-The package metadata and setup guide require Node.js 20+ and npm 10+. The root commands are:
+The package metadata and setup guide require Node.js 22.12+ and npm 10+. The root commands are:
 
 ```powershell
 npm install
@@ -84,6 +84,8 @@ package.json
 
 `npm run dev` starts the server and client concurrently. The React app sends REST requests to `/api/v1`; the Express server applies security middleware, assigns a request ID, validates/authenticates the request where required, reads or updates the store, and returns a consistent JSON envelope.
 
+Express 5 route parameters are validated inside handlers. Avoid inline regex parameter constraints because the newer `path-to-regexp` parser can reject them during startup.
+
 ## Configuration and data access
 
 Configuration is read from environment variables with safe local defaults. `.env.example` files document server and client variables. The current store is `server/src/store.js`; Mongoose schemas under `server/src/models/` document the intended MongoDB boundary but are not connected at runtime yet.
@@ -108,6 +110,7 @@ Local development uses Vite/Node. Docker Compose provides client, server, and Mo
 
 - In-memory data resets when the server restarts.
 - No automated test files, linting, or formatting scripts exist yet.
-- `npm audit` currently reports high-severity advisories from the installed dependency tree.
+- `npm audit --audit-level=high` passes; two moderate React Router 6 advisories remain until the router replacement decision is made.
+- Docker image builds require a running Docker Desktop Linux daemon; `docker compose config` can still validate the Compose definition without the daemon.
 - Demo credentials and JWT defaults are unsuitable for production.
 - MongoDB models are groundwork, not active persistence.

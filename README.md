@@ -16,7 +16,7 @@ This repository is the same-day MVP slice of the DevShelf startup platform. It i
 
 ## Run locally
 
-Requirements: Node.js 20+ and npm 10+.
+Requirements: Node.js 22.12+ and npm 10+.
 
 ```powershell
 npm install
@@ -72,6 +72,7 @@ See `server/src/models/` for the first Mongoose schema and `docs/openapi.yaml` f
 - [Architecture and runtime flows](docs/ARCHITECTURE.md)
 - [Build and implementation record](docs/BUILD_AND_FLOW.md)
 - [Testing and acceptance cases](docs/TEST_PLAN.md)
+- [Dependency rollup reference](docs/automation/07-dependency-rollup.md)
 - [Branching, pull requests, and code review](docs/ENGINEERING_WORKFLOW.md)
 - [Automation overview](automation/README.md)
 - [CI pipeline details](automation/CI_PIPELINE.md)
@@ -88,6 +89,7 @@ See `server/src/models/` for the first Mongoose schema and `docs/openapi.yaml` f
 
 - [Development guide](docs/automation/01-develop.md)
 - [Testing guide](docs/automation/02-test.md)
+- [Dependency rollup reference](docs/automation/07-dependency-rollup.md)
 - [Sample test](docs/automation/03-sample-test.md)
 - [Commit guide](docs/automation/04-commit.md)
 - [Pull-request guide](docs/automation/05-pull-request.md)
