@@ -47,7 +47,9 @@ git diff --check
 docker compose config
 ```
 
-The repository currently has no test files, so `npm test` reports zero tests. The high-severity audit gate passes after the React Router security fix, while two moderate React Router 6 advisories remain documented for a future router replacement decision.
+The repository currently has no test files, so `npm test` reports zero tests. The high-severity audit gate passes with zero vulnerabilities after the React Router migration. Use the exact patched `react-router` 8.3.0 package; do not replace it with the older `react-router-dom` 7.x line, which fails the high-severity audit gate.
+
+For React Router 8, import `BrowserRouter`, `Routes`, `Route`, links, and hooks from `react-router`. The `react-router-dom` package is a v6 compatibility wrapper and is not used by the current client.
 
 Start the server separately for an API smoke check:
 

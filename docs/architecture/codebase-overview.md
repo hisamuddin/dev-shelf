@@ -110,7 +110,7 @@ Local development uses Vite/Node. Docker Compose provides client, server, and Mo
 
 - In-memory data resets when the server restarts.
 - No automated test files, linting, or formatting scripts exist yet.
-- `npm audit --audit-level=high` passes; two moderate React Router 6 advisories remain until the router replacement decision is made.
+- `npm audit --audit-level=high` passes with zero vulnerabilities in a clean supported-runtime install. The client uses the exact patched `react-router` 8.3.0 package and imports the declarative APIs directly from `react-router`.
 - Docker image builds require a running Docker Desktop Linux daemon; `docker compose config` can still validate the Compose definition without the daemon.
 - Demo credentials and JWT defaults are unsuitable for production.
 - MongoDB models are groundwork, not active persistence.
