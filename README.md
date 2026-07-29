@@ -75,3 +75,22 @@ See `server/src/models/` for the first Mongoose schema and `docs/openapi.yaml` f
 - [Branching, pull requests, and code review](docs/ENGINEERING_WORKFLOW.md)
 - [Automation overview](automation/README.md)
 - [CI pipeline details](automation/CI_PIPELINE.md)
+
+## Documentation
+
+### Architecture
+
+- [Codebase overview](docs/architecture/codebase-overview.md)
+- [Component reference](docs/architecture/component-reference.md)
+- [Dependency graph](docs/architecture/dependency-graph.md)
+
+### Development workflow
+
+- [Development guide](docs/automation/01-develop.md)
+- [Testing guide](docs/automation/02-test.md)
+- [Sample test](docs/automation/03-sample-test.md)
+- [Commit guide](docs/automation/04-commit.md)
+- [Pull-request guide](docs/automation/05-pull-request.md)
+- [Review guide](docs/automation/06-review.md)
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for the contribution entry point and [SECURITY.md](SECURITY.md) for vulnerability reporting.

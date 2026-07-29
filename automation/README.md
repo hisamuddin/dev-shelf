@@ -1,13 +1,17 @@
 # DevShelf Automation
 
-This folder documents repeatable project automation. Machine-executed CI lives in `.github/workflows/ci.yml`; this folder explains what it does, how to run equivalent checks locally, and how releases should be handled.
+This folder documents repeatable project automation. The original combined check is preserved at `.github/workflows/ci.yml`; the repository also has separate build, test, and security workflows for clearer GitHub governance.
 
 ## Automation map
 
 ```text
 Pull request / push
         ↓
-.github/workflows/ci.yml
+.github/workflows/build.yml
+        ↓
+.github/workflows/test.yml
+        ↓
+.github/workflows/security-scan.yml
         ↓
 npm ci → npm test → npm run build
         ↓

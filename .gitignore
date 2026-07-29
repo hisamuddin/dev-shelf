@@ -5,3 +5,11 @@ dist/
 !.env.example
 coverage/
 .DS_Store
+Thumbs.db
+*.log
+.vscode/
+.idea/
+*.swp
+*.swo
+build/
+.cache/

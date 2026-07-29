@@ -1,0 +1,64 @@
+name: Feature request
+description: Propose a user or developer capability for DevShelf.
+title: "[Feature]: "
+labels: ["feature"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem statement
+      description: Who has the problem and what is difficult today?
+    validations:
+      required: true
+  - type: textarea
+    id: solution
+    attributes:
+      label: Proposed solution
+    validations:
+      required: true
+  - type: textarea
+    id: value
+    attributes:
+      label: Business or user value
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      description: Use observable outcomes.
+    validations:
+      required: true
+  - type: input
+    id: components
+    attributes:
+      label: Affected components
+      placeholder: client, server, cache, docs
+  - type: textarea
+    id: technical
+    attributes:
+      label: Technical considerations
+  - type: textarea
+    id: security
+    attributes:
+      label: Security impact
+  - type: textarea
+    id: performance
+    attributes:
+      label: Performance impact
+  - type: textarea
+    id: compatibility
+    attributes:
+      label: Backward-compatibility impact
+  - type: textarea
+    id: deployment
+    attributes:
+      label: Deployment impact
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional context

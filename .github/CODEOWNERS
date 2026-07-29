@@ -1,0 +1,7 @@
+# Replace placeholders with actual GitHub users or teams before enabling required reviews.
+* @REPLACE_WITH_OWNER
+/.github/ @REPLACE_WITH_DEVOPS_OWNER
+/docs/ @REPLACE_WITH_DOCS_OWNER
+/automation/ @REPLACE_WITH_DEVOPS_OWNER
+/client/ @REPLACE_WITH_ENGINEERING_OWNER
+/server/ @REPLACE_WITH_ENGINEERING_OWNER
