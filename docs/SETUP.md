@@ -31,7 +31,7 @@ For coordinated Dependabot updates, follow the [dependency rollup reference](aut
 - React and React DOM: UI runtime.
 - Vite: development server and production bundler.
 - React 19 and React DOM 19: paired UI runtime versions.
-- React Router: page navigation.
+- React Router 8.3.0: page navigation. The client imports its declarative APIs from `react-router` rather than `react-router-dom`.
 - Axios: API client with auth-header injection.
 - React Hook Form: form composition target for future form extraction.
 - Lucide React: accessible icon primitives.
@@ -47,7 +47,7 @@ For coordinated Dependabot updates, follow the [dependency rollup reference](aut
 - bcryptjs: password hashing.
 - Mongoose: persistence model boundary for MongoDB.
 
-The current dependency baseline is Node.js 22.12+, Express 5, Vite 8, and Mongoose 9.
+The current dependency baseline is Node.js 22.12+, Express 5, Vite 8, Mongoose 9, and the patched React Router 8.3.0 package.
 
 ## 3. Environment configuration
 

@@ -17,22 +17,22 @@ This document explains how the repository was created from an empty Git workspac
 
 ## Dependency-to-feature map
 
-| Dependency | Used by | Why it exists |
-| --- | --- | --- |
-| `react` | client | Component-driven UI |
-| `react-router-dom` | client | URL-addressable product flows |
-| `axios` | client | Central API calls and token headers |
-| `lucide-react` | client | Consistent interface icons |
-| `react-markdown` | client | Render resource notes |
-| `express` | server | REST API and middleware pipeline |
-| `zod` | server | Request payload validation |
-| `jsonwebtoken` | server | Demo access-token issuance and verification |
-| `bcryptjs` | server | Password hash comparison and creation |
-| `helmet` | server | Secure response headers |
-| `cors` | server | Controlled local client/API origin access |
-| `express-rate-limit` | server | Basic request throttling |
-| `mongoose` | server | MongoDB schema and migration boundary |
-| `vite` | client | Dev server and production bundling |
+| Dependency           | Used by | Why it exists                                        |
+| -------------------- | ------- | ---------------------------------------------------- |
+| `react`              | client  | Component-driven UI                                  |
+| `react-router` 8.3.0 | client  | URL-addressable product flows and browser navigation |
+| `axios`              | client  | Central API calls and token headers                  |
+| `lucide-react`       | client  | Consistent interface icons                           |
+| `react-markdown`     | client  | Render resource notes                                |
+| `express`            | server  | REST API and middleware pipeline                     |
+| `zod`                | server  | Request payload validation                           |
+| `jsonwebtoken`       | server  | Demo access-token issuance and verification          |
+| `bcryptjs`           | server  | Password hash comparison and creation                |
+| `helmet`             | server  | Secure response headers                              |
+| `cors`               | server  | Controlled local client/API origin access            |
+| `express-rate-limit` | server  | Basic request throttling                             |
+| `mongoose`           | server  | MongoDB schema and migration boundary                |
+| `vite`               | client  | Dev server and production bundling                   |
 
 ## End-to-end feature flows
 

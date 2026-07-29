@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { createRoot } from "react-dom/client";
-import { BrowserRouter, Link, NavLink, Route, Routes, useNavigate, useParams, useSearchParams } from "react-router-dom";
+import { BrowserRouter, Link, NavLink, Route, Routes, useNavigate, useParams, useSearchParams } from "react-router";
 import { ArrowRight, Bookmark, BookOpen, Check, ChevronDown, CircleUserRound, Code2, Compass, Copy, FolderPlus, Grid2X2, Layers3, Library, Menu, Moon, Plus, Search, Send, Sparkles, Star, Sun, Tag, TrendingUp, Users, X, Zap } from "lucide-react";
 import ReactMarkdown from "react-markdown";
 import axios from "axios";
