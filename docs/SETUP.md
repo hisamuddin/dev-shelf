@@ -4,7 +4,7 @@ This guide takes a new developer from a clean checkout to a running local DevShe
 
 ## 1. Prerequisites
 
-Install Node.js 20+, npm 10+, Git, and optionally Docker Desktop.
+Install Node.js 22.12+, npm 10+, Git, and optionally Docker Desktop.
 
 Verify on Windows PowerShell:
 
@@ -24,10 +24,13 @@ npm install
 
 The root workspace installs dependencies for both `client` and `server`.
 
+For coordinated Dependabot updates, follow the [dependency rollup reference](automation/07-dependency-rollup.md). Do not install the rollup with an older Node runtime and treat engine warnings as a successful validation.
+
 ### Client dependencies
 
 - React and React DOM: UI runtime.
 - Vite: development server and production bundler.
+- React 19 and React DOM 19: paired UI runtime versions.
 - React Router: page navigation.
 - Axios: API client with auth-header injection.
 - React Hook Form: form composition target for future form extraction.
@@ -43,6 +46,8 @@ The root workspace installs dependencies for both `client` and `server`.
 - JSON Web Token: access-token authentication.
 - bcryptjs: password hashing.
 - Mongoose: persistence model boundary for MongoDB.
+
+The current dependency baseline is Node.js 22.12+, Express 5, Vite 8, and Mongoose 9.
 
 ## 3. Environment configuration
 

@@ -8,5 +8,6 @@
 6. Run the repository checks before opening a PR.
 7. Open a pull request using `.github/pull_request_template.md`.
 8. Address review comments using the [review guide](docs/automation/06-review.md).
+9. Follow the [branch protection and approval policy](docs/automation/08-branch-protection.md), including the two-reviewer rule for security and dependency changes.
 
 Do not commit credentials, `.env` files, `node_modules`, build output, or real user data. Report security issues through [SECURITY.md](SECURITY.md), not a public issue.

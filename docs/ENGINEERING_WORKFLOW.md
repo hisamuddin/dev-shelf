@@ -19,7 +19,7 @@ Naming rules:
 - `docs/<short-description>` for documentation-only work.
 - `chore/<short-description>` for maintenance and tooling.
 
-The current local repository starts on `master` because it was initialized before a remote was selected. Rename the default branch to `main` when the remote repository is created, then protect `main`.
+The repository default branch is `main`. Always update `main` before creating a short-lived work branch, and never develop directly on `main`.
 
 ## Commit rules
 
@@ -38,6 +38,15 @@ Keep unrelated formatting and refactors out of feature commits. Never commit sec
 
 Every PR should include the problem, user impact, implementation summary, scope/non-goals, screenshots or API examples, test commands/results, rollout notes, and known limitations.
 
+The standard security-change flow is:
+
+1. Merge documentation or prerequisite work into `main`.
+2. Create `fix/<short-description>` from the latest `main`.
+3. Open a ready-for-review PR targeting `main` (do not leave it as a draft).
+4. Request two reviewers for security, dependency, authentication, data, or deployment changes.
+5. Wait for CI and the requested approvals before merging.
+6. Squash-merge the PR and delete the branch.
+
 ## Review rules
 
 - At least one reviewer for normal changes; two for auth, data, security, or deployment changes.
@@ -46,6 +55,8 @@ Every PR should include the problem, user impact, implementation summary, scope/
 - The author resolves or explicitly discusses every actionable comment.
 - Use squash merge for small feature branches to keep the default branch readable.
 - Delete merged branches unless they are needed for release or investigation.
+
+The current GitHub rule for `main` requires a pull request and resolved conversations, but does not enforce a minimum number of approving reviews. That setting is an administrative merge gate; it does not replace the project review policy above. Record any intentional exception in the PR conversation.
 
 ## Review checklist
 

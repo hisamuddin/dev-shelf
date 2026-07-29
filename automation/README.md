@@ -36,3 +36,5 @@ npm run build
 ```
 
 See [CI pipeline](CI_PIPELINE.md) and [release runbook](RELEASE_RUNBOOK.md).
+
+For coordinated dependency upgrades, use the [dependency rollup reference](../docs/automation/07-dependency-rollup.md). It documents the Node baseline, Express 5 route compatibility, validation commands, and the rule for closing superseded Dependabot PRs.
