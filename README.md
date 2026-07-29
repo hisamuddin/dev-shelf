@@ -74,6 +74,7 @@ See `server/src/models/` for the first Mongoose schema and `docs/openapi.yaml` f
 - [Testing and acceptance cases](docs/TEST_PLAN.md)
 - [Dependency rollup reference](docs/automation/07-dependency-rollup.md)
 - [Branching, pull requests, and code review](docs/ENGINEERING_WORKFLOW.md)
+- [GitHub branch protection and approval policy](docs/automation/08-branch-protection.md)
 - [Automation overview](automation/README.md)
 - [CI pipeline details](automation/CI_PIPELINE.md)
 
@@ -94,5 +95,6 @@ See `server/src/models/` for the first Mongoose schema and `docs/openapi.yaml` f
 - [Commit guide](docs/automation/04-commit.md)
 - [Pull-request guide](docs/automation/05-pull-request.md)
 - [Review guide](docs/automation/06-review.md)
+- [Branch protection and approval policy](docs/automation/08-branch-protection.md)
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for the contribution entry point and [SECURITY.md](SECURITY.md) for vulnerability reporting.

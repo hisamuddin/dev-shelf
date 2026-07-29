@@ -62,4 +62,4 @@ Docker image builds require Docker Desktop's Linux daemon to be running. If it i
 
 ## Pull-request handling
 
-Create one short-lived `chore/dependency-rollup` branch from `main`. Open one ready-for-review PR with the complete validation evidence. After that PR is reviewed and squash-merged, close superseded Dependabot PRs and delete their branches. Do not close them before the rollup is safely merged.
+Create one short-lived `chore/dependency-rollup` branch from the latest `main`. Open one ready-for-review PR targeting `main` with the complete validation evidence. Request two reviewers because dependency changes can affect security and runtime compatibility. After CI and approvals pass, squash-merge the rollup, then close superseded Dependabot PRs and delete their branches. Do not close them before the rollup is safely merged.

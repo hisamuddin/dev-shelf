@@ -73,3 +73,5 @@ A reviewer should be able to find:
 ## Approval standard
 
 Approve only when the behavior is correct, safe, maintainable, documented, and verified at the level appropriate for the risk.
+
+For security, dependency, authentication, data, or deployment changes, the project standard is two independent approvals after CI passes. GitHub currently records the approval requirement as an administrative setting of zero required approvals on `main`; reviewers should still follow this stricter project standard unless an explicit exception is documented in the PR.
