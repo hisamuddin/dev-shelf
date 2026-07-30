@@ -16,7 +16,7 @@ npm run build
 npm test
 ```
 
-The client build passes. The server test runner is configured, but the repository still needs test files; `npm test` currently reports zero tests.
+The client build passes. The server test runner now executes API integration tests with an isolated in-memory store and ephemeral HTTP listener; database-backed and browser suites remain planned.
 
 ## API test cases
 
@@ -25,6 +25,9 @@ The client build passes. The server test runner is configured, but the repositor
 | API-01 | Health endpoint | 200, healthy status and cache stats |
 | API-02 | Search published resources | 200, paginated results, unpublished items excluded |
 | API-03 | Filter by difficulty/category | Only matching resources returned |
+| API-03A | Filter by technology/type/tag and verified/featured flags | Only matching published resources returned |
+| API-03B | Sort and page discovery results | Stable sort, bounded page size, and correct page metadata |
+| API-03C | Search suggestions | Matching titles, categories, types, contributors, and technologies returned |
 | API-04 | Resource detail by slug | 200 for published slug, 404 for unknown slug |
 | API-05 | Register valid user | 200, JWT returned, password omitted |
 | API-06 | Duplicate registration | 409 generic conflict |
@@ -39,6 +42,7 @@ The client build passes. The server test runner is configured, but the repositor
 | API-15 | Admin approve | Status becomes approved |
 | API-16 | Admin publish | Published resource appears in public search |
 | API-17 | Cache hit/miss | Counters increase and TTL removes expired value |
+| API-18 | Request correlation | Success and error envelopes include the `X-Request-Id` value |
 
 ## Frontend test cases
 

@@ -16,7 +16,7 @@ This repository is the same-day MVP slice of the DevShelf startup platform. It i
 
 ## Run locally
 
-Requirements: Node.js 22.12+ and npm 10+.
+Requirements: Node.js 22.22+ and npm 10+.
 
 ```powershell
 npm install

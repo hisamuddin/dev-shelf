@@ -10,7 +10,7 @@ DevShelf is a modular-monolith developer-resource library. The current repositor
 | ----------------- | -------------------------------------------------------------------------- |
 | Languages         | JavaScript, JSX, JSON, YAML, Markdown                                      |
 | Frontend          | React 19, Vite 8, React Router, Axios, React Markdown, Lucide React        |
-| Backend           | Node.js 22.12+ runtime, Express 5                                          |
+| Backend           | Node.js 22.22+ runtime, Express 5                                          |
 | Package manager   | npm workspaces with `package-lock.json`                                    |
 | Database target   | MongoDB with Mongoose models; current runtime uses an in-memory demo store |
 | Cache             | Custom process-local `MemoryCache`                                         |
@@ -21,7 +21,7 @@ DevShelf is a modular-monolith developer-resource library. The current repositor
 
 ## Runtime versions and commands
 
-The package metadata and setup guide require Node.js 22.12+ and npm 10+. The root commands are:
+The package metadata and setup guide require Node.js 22.22+ and npm 10+. The root commands are:
 
 ```powershell
 npm install

@@ -4,7 +4,7 @@ This document records the dependency-consolidation decisions for DevShelf. Use i
 
 ## Runtime baseline
 
-- Node.js: `22.12+` for local development and GitHub Actions.
+- Node.js: `22.22+` for local development and GitHub Actions.
 - npm: `10+`.
 - Docker images: `node:26-alpine` for the client and server containers.
 - The root `package.json` declares the Node and npm engine requirements so an older local runtime reports the incompatibility early.

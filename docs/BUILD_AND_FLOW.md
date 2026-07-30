@@ -56,6 +56,12 @@ This document explains how the repository was created from an empty Git workspac
 
 An MVP change is ready when its route is connected, input and authorization rules exist, empty/loading/error/success states are represented, documentation is updated, and the relevant build or test command passes.
 
+## Resource discovery contract
+
+The public discovery endpoint accepts `q`, `category`, `technology`, `type`, `tag`, `difficulty`, `featured`, `verified`, `sort`, `page`, and `pageSize`. Sort values are `recent`, `viewed`, `bookmarked`, `rated`, `alphabetical`, and `trending`. The `/resources/suggestions?q=...` endpoint returns matching titles, categories, types, contributors, and technologies.
+
+Listing query keys are normalized before caching, so equivalent query-string ordering reuses the same process-local cache entry. Bookmark writes invalidate both `resources:*` listing entries and the matching `resource:*` detail entry.
+
 ## Known MVP gaps
 
 - The demo store resets on server restart.

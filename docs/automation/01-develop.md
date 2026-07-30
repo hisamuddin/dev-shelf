@@ -3,7 +3,7 @@
 ## Repository facts
 
 - Repository type: npm workspace monorepo with `client` and `server` packages.
-- Runtime: Node.js 22.12+.
+- Runtime: Node.js 22.22+.
 - Package manager: npm 10+ with the root `package-lock.json`.
 - Frontend: React/Vite.
 - Backend: Express/Node.js.
