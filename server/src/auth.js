@@ -1,7 +1,8 @@
 import jwt from "jsonwebtoken";
 import { randomUUID } from "node:crypto";
+import { config } from "./config.js";
 
-const secret = process.env.JWT_ACCESS_SECRET || "devshelf-local-secret";
+const secret = config.jwtAccessSecret;
 
 export const issueToken = (user) => jwt.sign({ sub: user.id, role: user.role, name: user.name }, secret, { expiresIn: "2h", jwtid: randomUUID() });
 

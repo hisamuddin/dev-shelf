@@ -4,7 +4,7 @@ This guide takes a new developer from a clean checkout to a running local DevShe
 
 ## 1. Prerequisites
 
-Install Node.js 22.12+, npm 10+, Git, and optionally Docker Desktop.
+Install Node.js 22.22+, npm 10+, Git, and optionally Docker Desktop.
 
 Verify on Windows PowerShell:
 
@@ -47,7 +47,7 @@ For coordinated Dependabot updates, follow the [dependency rollup reference](aut
 - bcryptjs: password hashing.
 - Mongoose: persistence model boundary for MongoDB.
 
-The current dependency baseline is Node.js 22.12+, Express 5, Vite 8, Mongoose 9, and the patched React Router 8.3.0 package.
+The current dependency baseline is Node.js 22.22+, Express 5, Vite 8, Mongoose 9, and the patched React Router 8.3.0 package.
 
 ## 3. Environment configuration
 
@@ -100,3 +100,7 @@ npm run start -w server
 - Stale local auth: use `Sign out`, then log in again.
 - Port conflict: stop the process using 5000 or 5173.
 - Demo data reset: restarting the server recreates the in-memory dataset.
+
+## 9. Azure deployment
+
+See [AZURE_DEPLOYMENT.md](AZURE_DEPLOYMENT.md) for the Azure Static Web Apps, App Service, Cosmos DB, GitHub variables, and verification flow.

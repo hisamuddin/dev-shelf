@@ -16,7 +16,7 @@ This repository is the same-day MVP slice of the DevShelf startup platform. It i
 
 ## Run locally
 
-Requirements: Node.js 22.12+ and npm 10+.
+Requirements: Node.js 22.22+ and npm 10+.
 
 ```powershell
 npm install
@@ -69,6 +69,7 @@ See `server/src/models/` for the first Mongoose schema and `docs/openapi.yaml` f
 ## Project handbook
 
 - [Setup and dependency guide](docs/SETUP.md)
+- [Azure deployment guide](docs/AZURE_DEPLOYMENT.md)
 - [Architecture and runtime flows](docs/ARCHITECTURE.md)
 - [Build and implementation record](docs/BUILD_AND_FLOW.md)
 - [Testing and acceptance cases](docs/TEST_PLAN.md)
