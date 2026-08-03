@@ -8,11 +8,12 @@ import { randomUUID } from "node:crypto";
 import { store } from "./store.js";
 import { MemoryCache } from "./cache.js";
 import { issueToken, requireAuth, requireRole } from "./auth.js";
+import { config } from "./config.js";
 
 const app = express();
 const cache = new MemoryCache(45_000);
 app.use(helmet());
-app.use(cors({ origin: process.env.CLIENT_URL || "http://localhost:5173" }));
+app.use(cors({ origin: (origin, callback) => callback(null, !origin || config.corsOrigins.includes(origin)) }));
 app.use(express.json({ limit: "1mb" }));
 app.use(rateLimit({ windowMs: 60_000, limit: 120, standardHeaders: true, legacyHeaders: false }));
 app.use((req, res, next) => { req.id = randomUUID(); res.setHeader("X-Request-Id", req.id); next(); });
@@ -22,7 +23,7 @@ const fail = (res, status, message, errors) => res.status(status).json({ success
 const publicUser = ({ passwordHash, ...user }) => user;
 const resourceInput = z.object({ title: z.string().min(5).max(150), description: z.string().min(20).max(300), category: z.string().min(2), difficulty: z.enum(["Beginner", "Intermediate", "Advanced"]), technologies: z.array(z.string()).min(1), content: z.string().min(20) });
 
-app.get("/health", (req, res) => ok(res, { status: "healthy", database: "demo-memory", uptime: process.uptime(), timestamp: new Date().toISOString(), environment: process.env.NODE_ENV || "development" }));
+app.get("/health", (req, res) => ok(res, { status: "healthy", database: config.databaseMode, uptime: process.uptime(), timestamp: new Date().toISOString(), environment: config.nodeEnv }));
 app.get("/api/v1/health", (req, res) => ok(res, { status: "healthy", cache: cache.stats() }));
 
 app.post("/api/v1/auth/register", (req, res) => { const parsed = z.object({ name: z.string().min(2), email: z.string().email(), password: z.string().min(8) }).safeParse(req.body); if (!parsed.success) return fail(res, 422, "Please check the highlighted fields.", parsed.error.issues); if (store.findUserByEmail(parsed.data.email)) return fail(res, 409, "An account with this email already exists."); const user = store.createUser(parsed.data); return ok(res, { user: publicUser(user), token: issueToken(user) }, "Welcome to DevShelf."); });
@@ -54,6 +55,5 @@ app.post("/api/v1/admin/submissions/:id/publish", requireAuth, requireRole("admi
 app.get("/api/v1/admin/cache/stats", requireAuth, requireRole("admin"), (req, res) => ok(res, cache.stats()));
 
 app.use((err, req, res, next) => { console.error(`[${req.id}]`, err); fail(res, 500, "Something went wrong. Try again shortly."); });
-const port = Number(process.env.PORT || 5000);
-if (process.env.NODE_ENV !== "test" && !process.argv.includes("--test") && !process.env.NODE_TEST_CONTEXT) app.listen(port, () => console.log(`DevShelf API listening on http://localhost:${port}`));
+if (config.nodeEnv !== "test" && !process.argv.includes("--test") && !process.env.NODE_TEST_CONTEXT) app.listen(config.port, () => console.log(`DevShelf API listening on http://localhost:${config.port}`));
 export { app };

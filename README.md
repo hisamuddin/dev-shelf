@@ -69,6 +69,7 @@ See `server/src/models/` for the first Mongoose schema and `docs/openapi.yaml` f
 ## Project handbook
 
 - [Setup and dependency guide](docs/SETUP.md)
+- [Azure deployment guide](docs/AZURE_DEPLOYMENT.md)
 - [Architecture and runtime flows](docs/ARCHITECTURE.md)
 - [Build and implementation record](docs/BUILD_AND_FLOW.md)
 - [Testing and acceptance cases](docs/TEST_PLAN.md)

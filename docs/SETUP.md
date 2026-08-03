@@ -100,3 +100,7 @@ npm run start -w server
 - Stale local auth: use `Sign out`, then log in again.
 - Port conflict: stop the process using 5000 or 5173.
 - Demo data reset: restarting the server recreates the in-memory dataset.
+
+## 9. Azure deployment
+
+See [AZURE_DEPLOYMENT.md](AZURE_DEPLOYMENT.md) for the Azure Static Web Apps, App Service, Cosmos DB, GitHub variables, and verification flow.
